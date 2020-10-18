@@ -1,0 +1,153 @@
+.file {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: $darkBlue;
+	border-radius: 0.7rem 6rem 0.7rem 0.7rem;
+	margin-bottom: 2rem;
+
+	@include breakpoint-up(medium) {
+		margin-right: 2rem;
+	}
+
+	padding: 3rem;
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: $veryDarkBlue;
+		height: 3rem;
+		width: 3rem;
+		border-radius: 0.7rem;
+		padding: 2rem;
+	}
+
+	&__icons {
+		display: flex;
+		flex-direction: row;
+		margin-top: 2rem;
+		width: 70%;
+		justify-content: space-between;
+		@include breakpoint-up(medium) {
+			width: 50%;
+		}
+	}
+}
+
+.storage {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	background-color: $darkBlue;
+	border-radius: 0.7rem;
+	padding: 3rem;
+	height: 14.5rem;
+
+	&__meter {
+		height: 2rem;
+		border-radius: 1rem 1rem 1rem 1rem;
+		background-color: $veryDarkBlue;
+		display: flex;
+		align-items: center;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	&__percentage {
+		border-radius: 1rem 1rem 1rem 1rem;
+		width: 80%;
+		position: relative;
+		background-image: linear-gradient(
+			to right,
+			$gradientLightRed,
+			$gradientPink
+		);
+		height: 1.5rem;
+		animation: progressBar 1.5s ease-in-out;
+		animation-fill-mode: both;
+	}
+
+	@keyframes progressBar {
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 80%;
+		}
+	}
+
+	&__info {
+		position: relative;
+		background-color: #fff;
+		display: flex;
+		margin: 2rem 3.2rem -7.2rem 3.2rem;
+		padding: 1.2rem;
+		border-radius: 1rem;
+		align-items: center;
+		justify-content: center;
+		color: $grayishBlue;
+
+		@include breakpoint-up(medium) {
+			margin: -14.5rem 0 0 50%;
+
+			border-bottom-right-radius: 0;
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 2rem;
+				height: 2rem;
+				right: -3rem;
+				bottom: -1.99rem;
+				right: 0;
+				border-left: 20px solid transparent;
+				border-top: 2.5rem solid #fff;
+				border-right: 0 solid transparent;
+				border-bottom: 0 solid transparent;
+				border-left: 2.5rem solid transparent;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 3rem;
+		&--black {
+			color: #000;
+		}
+	}
+
+	&__text {
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	&__bullet {
+		position: absolute;
+		right: 0.15rem;
+		top: 0.2rem;
+		margin: 0 auto;
+		text-align: center;
+		width: 1rem;
+		height: 1rem;
+		border-radius: 100%;
+		background-color: white;
+	}
+
+	&__statusses {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+// Attribution
+
+.attribution {
+	font-size: 11px;
+	text-align: center;
+	margin-top: 5rem;
+}
+
+.attribution a {
+	color: hsl(228, 45%, 44%);
+}
